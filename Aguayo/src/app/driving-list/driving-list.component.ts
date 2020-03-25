@@ -10,7 +10,10 @@ import {Observable} from 'rxjs';
 export class DrivingListComponent implements OnInit {
   obs: Observable<Driving[]>;
   drivingList: Driving[];
+  selectedCar: Driving;
+
   constructor(public http: HttpClient) { }
+
   //inizializza il componente
   ngOnInit(): void {
    this.obs= this.http.get<Driving[]>('https://my-json-server.typicode.com/malizia-g/fine_anno_exp/mezzi')
@@ -21,9 +24,10 @@ export class DrivingListComponent implements OnInit {
     this.drivingList=auto;
   }
 
-  onClick(auto : Driving)
+  onClick(auto : Driving): boolean
   {
     console.log(auto);
-
+    this.selectedCar=auto;
+    return false;
   }
 }

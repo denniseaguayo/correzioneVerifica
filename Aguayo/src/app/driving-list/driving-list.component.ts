@@ -20,4 +20,10 @@ export class DrivingListComponent implements OnInit {
   {
     this.drivingList=auto;
   }
+
+  onClick(auto : Driving)
+  {
+    console.log(auto);
+
+  }
 }

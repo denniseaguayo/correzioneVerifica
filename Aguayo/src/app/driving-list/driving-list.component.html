@@ -1,5 +1,5 @@
 <ul>
-  <li *ngFor='let i of drivingList'>
-  {{i.tipo}} | {{i.tariffa}}
+  <li *ngFor="let i of drivingList">
+  {{i.tipo}} | {{i.tariffa}}<button (click)="onClick(i)">Noleggia</button>
   </li>
 </ul>
